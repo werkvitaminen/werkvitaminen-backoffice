@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Core\View;
 use App\Models\FruitBoxType;
+use App\Models\FruitBoxTypeItem;
 
 class FruitBoxTypeController
 {
@@ -35,11 +36,18 @@ class FruitBoxTypeController
             exit;
         }
 
+        $itemModel = new FruitBoxTypeItem();
+
+        $items = $itemModel->getByBoxType($id);
+
         View::render('boxtypes/show', [
             'title' => 'Fruitbox type bekijken',
             'item' => $item,
-            'fields' => $this->model->getFieldsConfig()
+            'fields' => $this->model->getFieldsConfig(),
+            'items' => $items,
+            'fields_items' => $itemModel->getFieldsConfig()
         ]);
+
     }
 
     public function create()
