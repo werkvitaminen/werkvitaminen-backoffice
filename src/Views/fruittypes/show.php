@@ -8,7 +8,7 @@
 
 <h2>Inkoop varianten</h2>
 
-<a href="/variants/create?fruittype_id=<?= $item['id'] ?>">
+<a href="/variants/create?fruit_type_id=<?= $item['id'] ?>">
     + Nieuwe variant aanmaken
 </a>
 

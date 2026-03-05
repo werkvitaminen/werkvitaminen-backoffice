@@ -77,7 +77,7 @@ class FruitTypeController
                 header('Location: /fruittypes/'.$backpage.'/'.$id); exit;
             }
             else {
-                header('Location: /customers'); exit;
+                header('Location: /fruittypes'); exit;
             }
 
             header('Location: /fruittypes'); exit;
