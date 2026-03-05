@@ -12,6 +12,7 @@ use App\Controllers\AuthController;
 use App\Controllers\CustomerLocationController;
 use App\Controllers\FruitTypeController;
 use App\Controllers\FruitPurchaseVariantController;
+use App\Controllers\FruitBoxTypeController;
 
 // Load environment
 $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
@@ -26,7 +27,7 @@ $authController = new AuthController();
 $locationController = new CustomerLocationController();
 $fruitTypeController = new FruitTypeController();
 $variantController = new FruitPurchaseVariantController();
-
+$boxTypeController = new FruitBoxTypeController();
 
 
 // Routes
@@ -92,5 +93,14 @@ $router->post('/variants/create', [$variantController, 'create']);
 $router->get('/variants/edit/{id}', [$variantController, 'edit']);
 $router->post('/variants/edit/{id}', [$variantController, 'edit']);
 $router->get('/variants/delete/{id}', [$variantController, 'delete']);
+
+$router->get('/boxtypes', [$boxTypeController, 'index']);
+$router->get('/boxtypes/create', [$boxTypeController, 'create']);
+$router->post('/boxtypes/create', [$boxTypeController, 'create']);
+$router->get('/boxtypes/view/{id}', [$boxTypeController, 'show']);
+$router->get('/boxtypes/edit/{id}', [$boxTypeController, 'edit']);
+$router->post('/boxtypes/edit/{id}', [$boxTypeController, 'edit']);
+$router->get('/boxtypes/delete/{id}', [$boxTypeController, 'delete']);
+
 // Dispatch
 $router->resolve();

@@ -32,9 +32,9 @@
             <h2>Configuratie</h2>
             
             <a href="/users">Gebruikers</a>
-            <a href="#">Chauffeurs</a>
+            <a href="/drivers">Chauffeurs</a>
             <a href="/fruittypes">Fruitsoorten</a>
-            <a href="#">Type fruitboxen</a>
+            <a href="/boxtypes">Type fruitboxen</a>
             <br /><br />
             <a href="/logout">Uitloggen</a>
 
