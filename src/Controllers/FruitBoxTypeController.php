@@ -98,9 +98,26 @@ class FruitBoxTypeController
                 return;
             }
 
-            header('Location: /boxtypes');
+            if (isset($_SESSION['backpage'])) {
+                $backpage = $_SESSION['backpage'];
+                unset($_SESSION['backpage']);
+                header('Location: /boxtypes/'.$backpage.'/'.$id); exit;
+            }
+            else {
+                header('Location: /boxtypes'); exit;
+            }
+            
+
             exit;
         }
+
+        if (isset($_GET['backpage'])) {
+            $_SESSION['backpage'] = $_GET['backpage'];
+        }
+        else {
+            unset($_SESSION['backpage']);
+        }
+
 
         View::render('boxtypes/form', [
             'title' => 'Fruitbox type bewerken',

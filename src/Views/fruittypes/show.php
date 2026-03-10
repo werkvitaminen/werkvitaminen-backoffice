@@ -33,7 +33,6 @@
             <?php endforeach; ?>
             
             <td>
-                <a href="/variants/view/<?= $variant['id'] ?>">Bekijk</a>
                 <a href="/variants/edit/<?= $variant['id'] ?>">Bewerk</a>
                 <a href="/variants/delete/<?= $variant['id'] ?>">Verwijder</a>
             </td>

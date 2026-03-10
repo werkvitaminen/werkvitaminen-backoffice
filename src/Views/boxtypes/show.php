@@ -40,7 +40,7 @@
                 <?php if(!empty($props['list'])): ?>
 
                     <?php if($name === 'fruit_type_id'): ?>
-                        <td><?= htmlspecialchars($i['fruit_type_name']) ?></td>
+                        <td><?= htmlspecialchars($i['fruit_name']) ?></td>
                     <?php else: ?>
                         <td><?= htmlspecialchars($i[$name]) ?></td>
                     <?php endif; ?>

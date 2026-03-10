@@ -20,10 +20,11 @@ class FruitBoxTypeItem extends BaseModel
         $db = Database::getInstance();
 
         $stmt = $db->prepare("
-            SELECT i.*, f.name AS fruit_type_name
-             FROM fruit_box_type_items i
-             JOIN fruit_types f ON f.id = i.fruit_type_id
-             WHERE i.box_type_id = :box_type_id
+            SELECT i.*, f.name AS fruit_name
+            FROM fruit_box_type_items i
+            JOIN fruit_types f ON f.id = i.fruit_type_id
+            WHERE i.box_type_id = :box_type_id
+            ORDER BY f.name
         ");
 
         $stmt->execute([
